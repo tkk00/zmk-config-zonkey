@@ -208,7 +208,7 @@
             bindings = <
 &kp EXCLAMATION   &kp LS(NUMBER_2)  &kp HASH      &kp DOLLAR             &kp PERCENT                                   &kp LS(NUMBER_6)  &kp LS(N7)         &kp LS(N8)        &kp LS(N9)         &kp LS(N0)
 &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4           &kp N5       &trans            &kp LS(MINUS)  &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8      &kp NUMBER_9       &kp N0
-&kp LEFT_SHIFT    &kp TILDE         &kp SQT       &kp LS(DOUBLE_QUOTES)  &kp EQUAL    &kp LS(EQUAL)     &kp DELETE     &kp SEMICOLON     &kp LS(SEMICOLON)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SLASH
+&kp LEFT_SHIFT    &kp GRAVE         &kp SQT       &kp LS(DOUBLE_QUOTES)  &kp EQUAL    &kp LS(EQUAL)     &kp DELETE     &kp SEMICOLON     &kp LS(SEMICOLON)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SLASH
 &kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp TAB                &kp SPACE    &kp LANGUAGE_2                   &kp BACKSPACE     &kp ENTER                                                           &kp LS(BACKSLASH)
             >;
 
@@ -217,10 +217,10 @@
 
         layer_2 {
             bindings = <
-&kp F1            &kp F2                  &kp F3             &kp F4       &kp F5                                    &kp LS(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp MINUS
-&kp F6            &kp F7                  &kp F8             &kp F9       &kp F10    &trans                &trans   &kp LS(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp AT_SIGN
-&kp LEFT_SHIFT    &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT))  &kp LA(TAB)  &kp F11    &kp F12               &kp DEL  &trans              &trans          &trans        &trans     &kp QUESTION
-&kp LEFT_CONTROL  &kp LEFT_WIN            &kp LEFT_ALT       &kp TAB      &kp SPACE  &lt 6 INT_MUHENKAN             &kp BACKSPACE       &kp ENTER                                              &kp ESCAPE
+&kp F1            &kp F2                  &kp F3             &kp F4       &kp F5                                      &kp LS(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp LS(END)
+&kp F6            &kp F7                  &kp F8             &kp F9       &kp F10    &trans                &kp LS(Y)  &kp LS(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp LS(RIGHT)
+&kp LEFT_SHIFT    &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT))  &kp LA(TAB)  &kp F11    &kp F12               &kp DEL    &kp LS(Z)           &kp LS(X)       &kp LS(C)     &kp LS(V)  &kp QUESTION
+&kp LEFT_CONTROL  &kp LEFT_WIN            &kp LEFT_ALT       &kp TAB      &kp SPACE  &lt 6 INT_MUHENKAN               &kp BACKSPACE       &kp ENTER                                               &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -229,12 +229,12 @@
         layer_3 {
             bindings = <
 &kp JP_HANZEN  &trans  &trans  &trans            &trans                                          &trans       &trans  &moA    &moB  &moC
-&kp TAB        &trans  &trans  &trans            &trans       &trans                &trans       &trans       &trans  &trans  &moD  &moE
+&kp TAB        &trans  &trans  &trans            &trans       &kp K_MUTE            &trans       &trans       &trans  &trans  &moD  &moE
 &trans         &trans  &trans  &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA  &trans  &moF    &moG  &moH
 &mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 5 SPACE  &lt 4 INT_MUHENKAN                 &trans       &trans                      &moI
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
         };
 
         layer_4 {
