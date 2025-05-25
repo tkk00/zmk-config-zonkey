@@ -235,10 +235,10 @@
 
         layer_3 {
             bindings = <
-&kp JP_HANZEN  &trans  &trans  &trans            &trans                                          &trans       &trans  &moA    &moB  &moC
-&kp TAB        &trans  &trans  &trans            &trans       &kp K_MUTE            &trans       &trans       &trans  &trans  &moD  &moE
-&trans         &trans  &trans  &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA  &trans  &moF    &moG  &moH
-&mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 5 SPACE  &lt 4 INT_MUHENKAN                 &trans       &trans                      &moI
+&kp JP_HANZEN  &trans  &trans  &trans            &trans                                      &kp ASTERISK   &kp N7        &kp N8        &kp N9        &kp PLUS
+&kp TAB        &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &kp PERIOD     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS
+&trans         &trans  &trans  &trans            &trans       &trans                &kp DEL  &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 5 SPACE  &lt 4 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                         &moI
             >;
 
             sensor-bindings = <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
