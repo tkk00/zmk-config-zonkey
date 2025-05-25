@@ -217,10 +217,10 @@
 
         layer_2 {
             bindings = <
-&kp F1            &kp F2                  &kp F3             &kp F4       &kp F5                                      &kp LS(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp LS(END)
-&kp F6            &kp F7                  &kp F8             &kp F9       &kp F10    &trans                &kp LS(Y)  &kp LS(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp LS(RIGHT)
-&kp LEFT_SHIFT    &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT))  &kp LA(TAB)  &kp F11    &kp F12               &kp DEL    &kp LS(Z)           &kp LS(X)       &kp LS(C)     &kp LS(V)  &kp QUESTION
-&kp LEFT_CONTROL  &kp LEFT_WIN            &kp LEFT_ALT       &kp TAB      &kp SPACE  &lt 6 INT_MUHENKAN               &kp BACKSPACE       &kp ENTER                                               &kp ESCAPE
+&kp F1            &kp F2        &kp F3        &kp F4     &kp F5                                      &kp LS(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp LS(END)
+&kp F6            &kp F7        &kp F8        &kp F9     &kp F10    &trans                &kp LS(Y)  &kp LS(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp LS(RIGHT)
+&kp LEFT_SHIFT    &kp LS(E)     &kp LS(H)     &kp LS(F)  &kp F11    &kp F12               &kp DEL    &kp LS(Z)           &kp LS(X)       &kp LS(C)     &kp LS(V)  &kp QUESTION
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp TAB    &kp SPACE  &lt 6 INT_MUHENKAN               &kp BACKSPACE       &kp ENTER                                               &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
