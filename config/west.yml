@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/kureyakey
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: kloir-z # 新しいリモート
-      url-base: https://github.com/kloir-z
+    - name: tkk00 # 新しいリモート
+      url-base: https://github.com/tkk00
 
   projects:
     - name: zmk
@@ -15,7 +15,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-pmw3610-driver # ここを変更
-      remote: kloir-z
+      remote: tkk00
       revision: scroll-acceleration-feature
     - name: zmk-rgbled-widget
       remote: caksoylar
