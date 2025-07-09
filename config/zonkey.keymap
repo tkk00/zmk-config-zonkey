@@ -202,9 +202,9 @@
 
         default_layer {
             bindings = <
-&kp Q           &kp W         &kp E         &kp R      &kp T                                       &kp Y          &kp U      &kp I        &kp O         &kp P
-&kp A           &kp S         &kp D         &kp F      &kp G        &kp LS(LG(S))      &kp MINUS   &kp H          &kp J      &kp K        &kp L         &kp MINUS
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C      &kp V        &kp B              &kp DELETE  &kp N          &kp M      &lt 4 COMMA  &lt 5 PERIOD  &mkp MB1
+&mt ESCAPE Q    &kp W         &kp E         &kp R      &kp T                                       &kp Y          &kp U      &kp I        &kp O         &kp P
+&mt INS A       &kp S         &kp D         &kp F      &kp G        &kp LS(LG(S))      &kp TAB     &kp H          &kp J      &kp K        &kp L         &kp MINUS
+&kp LEFT_SHIFT  &mt CAPS Z    &kp X         &kp C      &kp V        &kp B              &kp DELETE  &kp N          &kp M      &lt 4 COMMA  &lt 5 PERIOD  &mkp MB1
 &kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 TAB  &lt 2 SPACE  &lt 3 JP_HANZEN                &kp BACKSPACE  &kp ENTER                                        &mkp MB2
             >;
 
@@ -213,10 +213,10 @@
 
         layer_1 {
             bindings = <
-&kp EXCLAMATION   &kp JP_AT         &kp HASH      &kp DOLLAR     &kp PERCENT                                     &kp JP_CARET   &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN    &kp JP_RPAREN
-&kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5  &trans         &kp JP_UNDERSCORE  &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8     &kp NUMBER_9     &kp NUMBER_0
-&kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp JP_DQUOTE  &kp JP_EQUAL  &kp JP_PLUS    &kp DELETE         &kp SEMICOLON  &kp JP_COLON      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp TAB        &kp SPACE     &kp GRAVE                         &kp BACKSPACE  &kp ENTER                                                          &kp BACKSLASH
+&kp EXCLAMATION   &kp JP_AT         &kp HASH      &kp DOLLAR      &kp PERCENT                                        &kp JP_CARET   &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN    &kp JP_RPAREN
+&kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5  &trans            &kp JP_UNDERSCORE  &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8     &kp NUMBER_9     &kp NUMBER_0
+&kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp JP_DQUOTE   &kp JP_EQUAL  &kp JP_PLUS       &kp DELETE         &kp SEMICOLON  &kp JP_COLON      &kp JP_LBRACKET  &kp JP_RBRACKET  &kp SLASH
+&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_1  &kp SPACE     &kp LANGUAGE_2                       &kp BACKSPACE  &kp ENTER                                                          &kp BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -224,10 +224,10 @@
 
         layer_2 {
             bindings = <
-&kp F1            &kp F2        &kp F3        &kp F4     &kp F5                                      &kp LC(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp LC(END)
-&kp F6            &kp F7        &kp F8        &kp F9     &kp F10    &trans                &kp LC(Y)  &kp LC(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp LC(RIGHT)
-&kp LEFT_SHIFT    &kp LC(E)     &kp LC(H)     &kp LC(F)  &kp F11    &kp F12               &kp DEL    &kp LC(Z)           &kp LC(X)       &kp LC(C)     &kp LC(V)  &kp LEFT_WIN
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp TAB    &kp SPACE  &lt 6 INT_MUHENKAN               &kp BACKSPACE       &kp ENTER                                               &kp ESCAPE
+&kp F1            &kp F2        &kp F3          &kp F4   &kp F5                                      &kp LC(HOME)        &kp HOME        &kp UP_ARROW  &kp END    &kp LC(END)
+&kp F6            &kp F7        &kp F8          &kp F9   &kp F10    &trans                &kp TILDE  &kp LC(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &kp LC(RIGHT)
+&kp LEFT_SHIFT    &kp TILDE     &kp UNDERSCORE  &trans   &kp F11    &kp F12               &kp DEL    &kp LC(Z)           &kp LC(X)       &kp LC(C)     &kp LC(V)  &kp QUESTION
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT    &kp TAB  &kp SPACE  &lt 6 INT_MUHENKAN               &kp BACKSPACE       &kp ENTER                                               &kp PIPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -257,10 +257,10 @@
 
         layer_5 {
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                          &trans  &trans  &trans              &trans       &trans
-&bt BT_DISC 0   &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans    &trans       &trans  &trans  &kp LC(LS(TAB))     &kp LC(TAB)  &mkp MB3
-&bt BT_CLR      &trans         &trans         &trans         &trans         &trans    &bootloader  &trans  &trans  &kp LA(LEFT_ARROW)  &trans       &kp LA(RIGHT)
-&bt BT_CLR_ALL  &trans         &trans         &trans         &trans         &trans                 &trans  &trans                                                  &trans
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                          &trans  &trans  &trans              &trans       &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans    &trans       &trans  &trans  &kp LC(LS(TAB))     &kp LC(TAB)  &mkp MB3
+&trans         &trans         &bt BT_CLR     &trans         &trans         &trans    &bootloader  &trans  &trans  &kp LA(LEFT_ARROW)  &trans       &kp LA(RIGHT)
+&trans         &trans         &trans         &trans         &trans         &trans                 &trans  &trans                                                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
