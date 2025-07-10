@@ -183,7 +183,7 @@
         moI: moI {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp JP_BSLH>, <&kp JP_UNDERSCORE>;
+            bindings =<&msc SCRL_DOWN>,<&msc SCRL_UP>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
