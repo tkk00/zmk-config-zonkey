@@ -1,4 +1,4 @@
-#include <physical_layouts.dtsi>
+.#include <physical_layouts.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -193,7 +193,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <50>;
+            tap-ms = <10>;
         };
     };
 
@@ -216,7 +216,7 @@
 &kp EXCLAMATION   &kp JP_AT         &kp HASH      &kp DOLLAR      &kp PERCENT                                             &kp JP_CARET   &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN
 &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5       &trans            &mt RIGHT_ALT TAB  &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8     &kp NUMBER_9   &kp NUMBER_0
 &kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMICOLON   &kp JP_UNDERSCORE  &kp JP_PLUS       &kp DELETE         &kp JP_EQUAL   &kp JP_PLUS       &kp COMMA        &kp PERIOD     &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_2  &kp SPACE          &kp LANGUAGE_1                       &kp BACKSPACE  &kp ENTER                                                        &kp BACKSLASH
+&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_2  &kp SPACE          &kp LANGUAGE_1                       &kp BACKSPACE  &kp ENTER                                                        &kp JP_BSLH
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
