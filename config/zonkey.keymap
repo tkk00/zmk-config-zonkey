@@ -183,7 +183,7 @@
         moI: moI {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>,<&msc SCRL_UP>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -191,7 +191,7 @@
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings =  <&msc SCRL_DOWN>,<&msc SCRL_UP>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             tap-ms = <20>;
         };
@@ -226,7 +226,7 @@
             bindings = <
 &kp F1            &kp F2        &kp F3         &kp F4          &kp F5                                          &kp LC(HOME)        &kp HOME         &kp UP_ARROW         &kp END              &kp LC(END)
 &kp F6            &kp F7        &kp F8         &kp F9          &kp F10    &trans            &mt RIGHT_ALT TAB  &kp LC(LEFT_ARROW)  &kp LEFT_ARROW   &kp DOWN             &kp RIGHT            &kp LC(RIGHT)
-&kp LEFT_SHIFT    &kp JP_TILDE     &kp JP_DQUOTE  &kp JP_COLON    &kp F11    &kp F12           &kp DELETE         &kp JP_LBRACKET     &kp JP_RBRACKET  &kp LS(JP_LBRACKET)  &kp LS(JP_RBRACKET)  &kp QUESTION
+&kp LEFT_SHIFT    &kp JP_TILDE  &kp JP_DQUOTE  &kp JP_COLON    &kp F11    &kp F12           &kp DELETE         &kp JP_LBRACKET     &kp JP_RBRACKET  &kp LS(JP_LBRACKET)  &kp LS(JP_RBRACKET)  &kp QUESTION
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT   &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1                       &kp BACKSPACE       &kp ENTER                                                                 &kp JP_PIPE
             >;
 
@@ -257,10 +257,10 @@
 
         layer_5 {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                          &trans  &trans  &trans              &trans    &trans
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans    &trans       &trans  &trans  &kp LC(LS(TAB))     &mkp MB3  &kp LC(TAB)
-&trans         &trans         &bt BT_CLR     &trans         &trans         &trans    &bootloader  &trans  &trans  &kp LA(LEFT_ARROW)  &none     &kp LA(RIGHT)
-&trans         &trans         &trans         &trans         &trans         &trans                 &trans  &trans                                               &none
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                          &trans  &trans  &trans           &trans    &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans    &trans       &trans  &trans  &kp LC(LS(TAB))  &mkp MB3  &kp LC(TAB)
+&trans         &trans         &bt BT_CLR     &trans         &trans         &trans    &bootloader  &trans  &trans  &mkp MB4         &none     &mkp MB5
+&trans         &trans         &trans         &trans         &trans         &trans                 &trans  &trans                                          &mkp MB3
             >;
 
             sensor-bindings = <&scroll_up_down>;
