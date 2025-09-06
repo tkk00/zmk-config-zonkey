@@ -237,11 +237,11 @@
             bindings = <
 &kp JP_HANZEN  &trans  &trans  &trans            &trans                                      &trans         &trans        &trans              &trans    &trans
 &kp TAB        &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &kp LC(LS(TAB))     &mkp MB3  &kp LC(TAB)
-&trans         &trans  &trans  &trans            &trans       &trans                &kp DEL  &trans         &trans        &kp LA(LEFT_ARROW)  &mkp MB3  &kp LA(RIGHT)
+&trans         &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &kp LA(LEFT_ARROW)  &mkp MB3  &kp LA(RIGHT)
 &mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                               &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_UP) LC(C_VOLUME_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
         };
 
         layer_4 {
