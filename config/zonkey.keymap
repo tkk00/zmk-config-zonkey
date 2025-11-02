@@ -216,7 +216,7 @@
 &kp EXCLAMATION   &kp JP_AT         &kp HASH      &kp DOLLAR      &kp PERCENT                                             &kp JP_CARET   &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN
 &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5       &trans            &mt RIGHT_ALT TAB  &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8     &kp NUMBER_9   &kp NUMBER_0
 &kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMICOLON   &kp JP_UNDERSCORE  &kp JP_PLUS       &kp DELETE         &kp JP_EQUAL   &kp JP_PLUS       &kp COMMA        &kp PERIOD     &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_2  &kp SPACE          &kp LANGUAGE_1                       &kp BACKSPACE  &kp ENTER                                                        &kp JP_BSLH
+&kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_2  &kp SPACE          &kp LANGUAGE_1                       &kp BACKSPACE  &mt RALT TAB                                                     &kp JP_BSLH
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -227,7 +227,7 @@
 &kp F1            &kp F2        &kp F3         &kp F4          &kp F5                                          &kp LC(HOME)        &kp HOME         &kp UP_ARROW         &kp END              &kp LC(END)
 &kp F6            &kp F7        &kp F8         &kp F9          &kp F10    &trans            &mt RIGHT_ALT TAB  &kp LC(LEFT_ARROW)  &kp LEFT_ARROW   &kp DOWN             &kp RIGHT            &kp LC(RIGHT)
 &kp LEFT_SHIFT    &kp JP_TILDE  &kp JP_DQUOTE  &kp JP_COLON    &kp F11    &kp F12           &kp DELETE         &kp JP_LBRACKET     &kp JP_RBRACKET  &kp LS(JP_LBRACKET)  &kp LS(JP_RBRACKET)  &kp QUESTION
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT   &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1                       &kp BACKSPACE       &kp ENTER                                                                 &kp JP_PIPE
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT   &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1                       &kp BACKSPACE       &mt RALT TAB                                                              &kp JP_PIPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -257,10 +257,10 @@
 
         layer_5 {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                          &trans  &trans  &trans           &trans    &trans
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans    &trans       &trans  &trans  &kp LC(LS(TAB))  &mkp MB3  &kp LC(TAB)
-&trans         &trans         &bt BT_CLR     &trans         &trans         &trans    &bootloader  &trans  &trans  &mkp MB4         &none     &mkp MB5
-&trans         &trans         &trans         &trans         &trans         &trans                 &trans  &trans                                          &mkp MB3
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                             &trans  &trans  &trans           &trans    &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans       &trans       &trans  &trans  &kp LC(LS(TAB))  &mkp MB3  &kp LC(TAB)
+&trans         &trans         &bt BT_CLR     &trans         &trans         &trans       &bootloader  &trans  &trans  &mkp MB4         &none     &mkp MB5
+&trans         &trans         &trans         &trans         &trans         &kp GRAVE                 &trans  &trans                                          &mkp MB3
             >;
 
             sensor-bindings = <&scroll_up_down>;
