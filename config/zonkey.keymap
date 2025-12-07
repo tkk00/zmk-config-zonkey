@@ -215,7 +215,7 @@
             bindings = <
 &kp EXCLAMATION   &kp JP_AT         &kp HASH      &kp DOLLAR      &kp PERCENT                                             &kp JP_CARET   &kp JP_AMPERSAND  &kp JP_ASTERISK  &kp JP_LPAREN  &kp JP_RPAREN
 &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4    &kp NUMBER_5       &trans            &mt RIGHT_ALT TAB  &kp NUMBER_6   &kp NUMBER_7      &kp NUMBER_8     &kp NUMBER_9   &kp NUMBER_0
-&kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMICOLON   &kp JP_UNDERSCORE  &kp JP_PLUS       &kp DELETE         &kp JP_EQUAL   &kp JP_PLUS       &kp COMMA        &kp PERIOD     &kp SLASH
+&kp LEFT_SHIFT    &kp JP_BACKQUOTE  &kp JP_QUOTE  &kp SEMICOLON   &kp JP_UNDERSCORE  &kp JP_PLUS       &kp RCTRL          &kp JP_EQUAL   &kp JP_PLUS       &kp COMMA        &kp PERIOD     &kp SLASH
 &kp LEFT_CONTROL  &kp LEFT_WIN      &kp LEFT_ALT  &kp LANGUAGE_2  &kp SPACE          &kp LANGUAGE_1                       &kp BACKSPACE  &mt RALT TAB                                                     &kp JP_BSLH
             >;
 
@@ -235,10 +235,10 @@
 
         layer_3 {
             bindings = <
-&kp JP_HANZEN  &trans  &trans  &trans            &trans                                      &trans         &trans        &trans              &trans    &trans
-&kp TAB        &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &kp LC(LS(TAB))     &mkp MB3  &kp LC(TAB)
-&trans         &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &kp LA(LEFT_ARROW)  &mkp MB3  &kp LA(RIGHT)
-&mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                               &none
+&kp JP_HANZEN  &trans  &trans  &trans            &trans                                      &trans         &trans        &trans    &trans    &trans
+&kp TAB        &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &mkp MB1  &mkp MB3  &mkp MB2
+&trans         &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &mkp MB4  &mkp MB3  &mkp MB5
+&mt LCTL ESC   &trans  &trans  &lt 6 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
@@ -268,10 +268,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mkp MB3
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mkp MB1
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                            &mkp MB2
+&trans  &trans  &trans  &trans  &trans                     &trans  &trans  &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2
+&trans  &trans  &trans  &trans  &trans  &kp DEL    &trans  &trans  &trans  &mkp MB4  &trans    &mkp MB5
+&trans  &trans  &trans  &trans  &trans  &trans             &trans  &trans                                &mkp MB2
             >;
 
             sensor-bindings = <&scroll_up_down>;
