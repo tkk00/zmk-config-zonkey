@@ -235,10 +235,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans            &trans                                      &trans         &trans        &kp LC(LG(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))  &kp LG(TAB)
-&trans  &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &kp LA(LS(TAB))         &kp LA(TAB)              &mkp MB3
-&trans  &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &kp LC(PAGE_DOWN)       &kp LC(PAGE_UP)          &trans
-&trans  &trans  &trans  &lt 7 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                                                &trans
+&trans  &trans  &trans  &trans            &trans                                      &trans         &trans        &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &trans  &trans  &mkp MB3
+&trans  &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &trans  &trans  &trans
+&trans  &trans  &trans  &lt 7 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
@@ -246,10 +246,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LC(V)  &kp LC(X)
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp LC(C)  &kp BACKSPACE
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                    &kp KP_ENTER
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -257,10 +257,10 @@
 
         layer_5 {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                             &trans  &trans  &trans           &trans    &trans
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans       &trans       &trans  &trans  &kp LC(LS(TAB))  &mkp MB3  &kp LC(TAB)
-&trans         &trans         &bt BT_CLR     &trans         &trans         &trans       &bootloader  &trans  &trans  &mkp MB4         &none     &mkp MB5
-&trans         &trans         &trans         &trans         &trans         &kp GRAVE                 &trans  &trans                                          &mkp MB3
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                             &trans  &trans  &trans           &trans  &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans       &trans       &trans  &trans  &kp LC(PAGE_UP)  &trans  &kp LC(PAGE_DOWN)
+&trans         &trans         &bt BT_CLR     &trans         &trans         &trans       &bootloader  &trans  &trans  &mkp MB4         &none   &mkp MB5
+&trans         &trans         &trans         &trans         &trans         &kp GRAVE                 &trans  &trans                                              &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
