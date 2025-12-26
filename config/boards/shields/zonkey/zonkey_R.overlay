@@ -17,15 +17,24 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&rotate_cw_90>;
+        input-processors = <
+            &axis_swap_xy
+            &invert_y
+        >;
     };
 
-    rotate_cw_90: rotate_cw_90 {
-        compatible = "zmk,input-processor-rotate";
+    axis_swap_xy: axis_swap_xy {
+        compatible = "zmk,input-processor-axis-swap";
         #input-processor-cells = <0>;
-        degrees = <270>; /* = -90° */
+    };
+
+    invert_y: invert_y {
+        compatible = "zmk,input-processor-axis-invert";
+        #input-processor-cells = <1>;
+        axes = <INPUT_REL_Y>;
     };
 };
+
 
 
 &pinctrl {
