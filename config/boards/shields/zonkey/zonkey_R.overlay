@@ -22,6 +22,7 @@
 
     axis_swap_xy: axis_swap_xy {
         compatible = "zmk,input-processor";
+        #input-processor-cells = <0>;
         type = "swap";
         axes = <INPUT_REL_X INPUT_REL_Y>;
     };
