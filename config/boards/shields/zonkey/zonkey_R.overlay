@@ -30,7 +30,7 @@
 
     invert_y: invert_y {
         compatible = "zmk,input-processor-axis-invert";
-        #input-processor-cells = <1>;
+        #input-processor-cells = <0>;
         axes = <INPUT_REL_Y>;
     };
 };
