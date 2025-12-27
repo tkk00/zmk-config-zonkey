@@ -23,10 +23,8 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <
-            &zip_xy_swap_mapper
-            &zip_y_invert_mapper
-        >;
+        /* ZMK 4.1 に実在するのはこれだけ */
+        input-processors = <&zip_xy_swap_mapper>;
     };
 };
 
