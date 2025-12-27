@@ -1,8 +1,9 @@
+#include <input/processors.dtsi>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include "zonkey.dtsi"
 
-/* スクロール値の再定義エラー(警告)を防ぐため、一度解除してから定義 */
+/* スクロール値の再定義警告を抑止 */
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
@@ -13,21 +14,25 @@
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH>
         , <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
 / {
-    /* * 標準の zip_xy_transform プロセッサを使用します。
-     * これにより、独自にノード(axis_swap_xy等)を定義して
-     * Bindingエラーが出るのを回避します。
+    /*
+     * Zenn記事・公式準拠:
+     * zip_xy_transform + INPUT_TRANSFORM_* を使用
      */
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_XY_SWAP)>;
+
+        input-processors = <
+            &zip_xy_transform
+            (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+        >;
     };
 };
 
@@ -65,9 +70,7 @@
         spi-max-frequency = <2000000>;
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* * 軸の定義は標準的な X と Y を指定。
-         * 入れ替えや反転は上記の input-processors で処理します。
-         */
+        /* 軸は素の X/Y。補正は processor 側で行う */
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
     };
