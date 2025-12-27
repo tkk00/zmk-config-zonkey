@@ -1,9 +1,8 @@
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/input_transform.h>
 #include "zonkey.dtsi"
 
-/* スクロール値の再定義警告を回避 */
+/* スクロール値の再定義警告対策 */
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
@@ -21,18 +20,32 @@
 };
 
 / {
+    /*
+     * Trackball input listener
+     * - XY 入れ替えはデバイス側で解決済み
+     * - Scroll / Auto Mouse は listener / processor で制御
+     */
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        /*
-         * ZMK公式 input-processor
-         *  - XY 入れ替え
-         *  - Y 軸反転
-         */
-        input-processors =
-            <&zip_xy_transform
-             (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+        /* Scroll layer 用 processor */
+        input-processors = <&scroll_processor>;
+
+        /* Auto Mouse Layer (旧 automouse-layer = <6>) */
+        automouse {
+            compatible = "zmk,automouse";
+            layer = <6>;
+            timeout-ms = <700>;
+        };
+    };
+
+    /* Scroll Layer Processor (旧 scroll-layers = <5>) */
+    scroll_processor: scroll_processor {
+        compatible = "zmk,input-processor-scroll";
+        layers = <5>;
+        scroll-axis = <INPUT_REL_Y>;
+        multiplier = <16>;
     };
 };
 
@@ -71,10 +84,10 @@
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /*
-         * 軸定義は標準のまま
-         * 向き補正は input-processor 側で処理
+         * XY を入れ替えて論理座標を補正
+         * （左→左、上→上になる）
          */
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        zephyr,axis-x = <INPUT_REL_Y>;
+        zephyr,axis-y = <INPUT_REL_X>;
     };
 };
