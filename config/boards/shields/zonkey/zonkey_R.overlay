@@ -27,11 +27,12 @@
         device = <&trackball>;
 
         input-processors = <
-            &zip_temp_layer 6 10000
-            &zip_xy_transform INPUT_TRANSFORM_XY_SWAP
+            &temp_layer 6 10000
+            &xy_transform INPUT_TRANSFORM_XY_SWAP
         >;
     };
 };
+
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -70,6 +71,5 @@
         /* XY 入れ替え（既に正しい状態） */
         zephyr,axis-x = <INPUT_REL_Y>;
         zephyr,axis-y = <INPUT_REL_X>;
-        scroll-layers = <5>;
     };
 };
