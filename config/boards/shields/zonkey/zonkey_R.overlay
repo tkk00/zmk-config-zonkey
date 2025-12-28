@@ -1,3 +1,4 @@
+
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
@@ -25,15 +26,10 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        /* Scroll layer = 5 */
-        input-processors = <&zip_scroll_mapper 5>;
-
-        /* Auto Mouse Layer = 6 */
-        automouse {
-            compatible = "zmk,automouse";
-            layer = <6>;
-            timeout-ms = <700>;
-        };
+        input-processors = <
+            &zip_temp_layer 6 10000
+            &zip_xy_transform INPUT_TRANSFORM_XY_SWAP
+        >;
     };
 };
 
@@ -74,5 +70,6 @@
         /* XY 入れ替え（既に正しい状態） */
         zephyr,axis-x = <INPUT_REL_Y>;
         zephyr,axis-y = <INPUT_REL_X>;
+        scroll-layers = <5>;
     };
 };
