@@ -21,17 +21,26 @@
         , <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
         input-processors = <
-            &temp_layer 6 10000
             &xy_transform INPUT_TRANSFORM_XY_SWAP
         >;
+
+        automouse {
+            compatible = "zmk,automouse";
+            layer = <6>;
+            timeout-ms = <700>;
+        };
     };
 };
+
 
 
 &pinctrl {
