@@ -21,6 +21,20 @@
         , <&gpio0 10 GPIO_ACTIVE_HIGH>;
 };
 
+
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        19 // K
+        21 // ;
+        34 // Ctrl
+    >;
+};
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
@@ -34,7 +48,7 @@
         input-processors =
             <&zip_xy_transform
              (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_temp_layer 6 10000>;
+            <&zip_temp_layer 6 100000>;
 
     };
 };
