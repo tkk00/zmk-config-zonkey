@@ -41,32 +41,26 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        /* 1. レイヤー5：スクロール設定 */
+        /* 1. レイヤー5：スクロール用 */
         scroller {
             layers = <5>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-            
-            /* ベース設定（XY入れ替え）を適用させるために継続 */
-            process-next; 
+            input-processors = <
+                &zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT),
+                &zip_xy_to_scroll_mapper
+            >;
         };
 
-        /* 2. 通常時（レイヤー0など）：一時レイヤーの設定をオーバーライドとして定義 */
-        /* note: どのレイヤーでもこの機能を有効にしたい場合は layers = <0 1 2 3 4 5 6>; のように記述するか、
-           特定のレイヤー（例: 0）のみで動かしたい場合に指定します */
+        /* 2. 通常時（レイヤー0）：一時レイヤー処理 */
         temp_layer_handler {
-            layers = <0>; 
-            input-processors = <&zip_temp_layer 6 100000>;
-            
-            /* ベース設定（XY入れ替え）を適用させるために継続 */
-            process-next;
+            layers = <0>;
+            input-processors = <
+                &zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT),
+                &zip_temp_layer 6 100000
+            >;
         };
-
-        /* 3. ベース設定：物理的な軸の補正（常に最後に適用） */
-        /* 親ノードの input-processors は、どの子ノードにもマッチしなかった場合、
-           または子ノードで process-next; が指定された場合に実行されます */
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
+
 
 &pinctrl {
     spi0_default: spi0_default {
