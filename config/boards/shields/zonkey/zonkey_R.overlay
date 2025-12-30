@@ -41,16 +41,19 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        /*
-         * ZMK公式 input-processor
-         *  - XY 入れ替え
-         *  - Y 軸反転
-         */
-        input-processors =
-            <&zip_xy_transform
-             (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_temp_layer 6 100000>;
+        /* レイヤー5：スクロール設定 */
+        scroller {
+            layers = <5>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+            
+            /* これを追加することで、下のベース設定(XY入れ替え)も継続して実行されます */
+            process-next; 
+        };
 
+        /* ベース設定（常に適用される） */
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_temp_layer 6 100000>;
     };
 };
 
