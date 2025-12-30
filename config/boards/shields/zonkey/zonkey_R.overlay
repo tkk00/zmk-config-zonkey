@@ -44,19 +44,18 @@
         /* 1. レイヤー5：スクロール用 */
         scroller {
             layers = <5>;
-            input-processors = <
-                &zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT),
-                &zip_xy_to_scroll_mapper
-            >;
+            /* 引数のカッコ前のスペースを詰め、<>で囲みます */
+            input-processors = 
+                <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_to_scroll_mapper>;
         };
 
-        /* 2. 通常時（レイヤー0）：一時レイヤー処理 */
+        /* 2. 通常時：一時レイヤー処理 */
         temp_layer_handler {
             layers = <0>;
-            input-processors = <
-                &zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT),
-                &zip_temp_layer 6 100000
-            >;
+            input-processors = 
+                <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_temp_layer 6 100000>;
         };
     };
 };
