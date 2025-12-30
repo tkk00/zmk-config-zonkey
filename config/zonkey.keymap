@@ -79,6 +79,7 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
+        };
     };
 
     behaviors {
@@ -209,6 +210,7 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
