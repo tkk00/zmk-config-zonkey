@@ -33,9 +33,8 @@
          */
         input-processors =
             <&zip_xy_transform
-             (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
-
-        input-processors = <&zip_temp_layer 6j 10000>;
+             (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_temp_layer 6 10000>;
 
     };
 };
