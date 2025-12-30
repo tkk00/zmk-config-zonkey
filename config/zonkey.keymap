@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define DFb 0
@@ -34,6 +35,11 @@
 #define JP_HANZEN       GRAVE             // 半角/全角
 #define JP_BSLH  INT1         // (backslash)
 
+
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 5 250>;
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -56,6 +62,23 @@
             bindings = <&none>;
             label = "NEW_MACRO";
         };
+
+        exit_AML: exit_AML {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_off MOUSE>;
+            label = "exit_AML";
+        };
+
+        kp_exit_AML: kp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
+            label = "KP_exit_AML";
     };
 
     behaviors {
@@ -186,6 +209,12 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
+
+        tog_off: toggle_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
         };
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
