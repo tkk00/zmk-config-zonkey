@@ -47,7 +47,7 @@
             /* 引数のカッコ前のスペースを詰め、<>で囲みます */
             input-processors = 
                 <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                <&zip_scroll_scaler 1 8>,
+                <&zip_scroll_scaler 1 10>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
