@@ -46,7 +46,8 @@
             layers = <5>;
             /* 引数のカッコ前のスペースを詰め、<>で囲みます */
             input-processors = 
-                <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
+                <&zip_scroll_scaler 1 3>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
