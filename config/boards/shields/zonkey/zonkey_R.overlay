@@ -47,14 +47,21 @@
             /* 引数のカッコ前のスペースを詰め、<>で囲みます */
             input-processors = 
                 <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                <&zip_scroll_scaler 1 15>,
+                <&zip_scroll_scaler 1 20>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
         snipe_handler {
-            layers = <3>;
+            layers = <2>;
             input-processors =
                 <&zip_xy_scaler 1 2>;
+            process-next;
+        };
+
+        heavy_snipe_handler {
+            layers = <3>;
+            input-processors =
+                <&zip_xy_scaler 1 4>;
             process-next;
         };
 
