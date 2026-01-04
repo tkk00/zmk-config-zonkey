@@ -2,14 +2,18 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: kureyakey
-      url-base: https://github.com/kureyakey
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
     - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: tkk00
       url-base: https://github.com/tkk00
 
   projects:
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
+      revision: main
+
     - name: zmk
       remote: zmkfirmware
       revision: main
@@ -18,6 +22,3 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
-
-  self:
-    path: config
