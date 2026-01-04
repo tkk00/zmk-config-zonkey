@@ -8,10 +8,6 @@ manifest:
       url-base: https://github.com/tkk00
 
   projects:
-    - name: zmk-pointing-acceleration
-      remote: tkk00
-      revision: main
-
     - name: zmk
       remote: zmkfirmware
       revision: main
