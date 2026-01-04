@@ -51,10 +51,11 @@
                 <&zip_xy_to_scroll_mapper>;
         };
 
-        snipe_cursor_handler {
+        snipe_handler {
             layers = <3>;
             input-processors =
-                <&zip_xy_scaler 1 4>;
+                <&zip_xy_scaler 1 2>,
+                <zip_scroll_scaler 1 3>;
             process-next;
         };
 
