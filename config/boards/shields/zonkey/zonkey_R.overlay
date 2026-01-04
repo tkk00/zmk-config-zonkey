@@ -47,13 +47,20 @@
             /* 引数のカッコ前のスペースを詰め、<>で囲みます */
             input-processors = 
                 <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                <&zip_scroll_scaler 1 10>,
+                <&zip_scroll_scaler 1 15>,
                 <&zip_xy_to_scroll_mapper>;
+        };
+
+        snipe_cursor_handler {
+            layers = <3>;
+            input-processors =
+                <&zip_xy_scaler 1 4>;
+            process-next;
         };
 
         /* 2. 通常時：一時レイヤー処理 */
         temp_layer_handler {
-            layers = <0>;
+            layers = <0 1 2 3 4 6 7 >;
             input-processors = 
                 <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
                 <&zip_temp_layer 6 100000>;
