@@ -70,7 +70,7 @@
             layers = <0 1 2 3 4 6 7 >;
             input-processors = 
                 <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-                <&zip_temp_layer 6 100000>;
+                <&zip_temp_layer 6 10000>;
         };
     };
 };
