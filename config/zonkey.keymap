@@ -324,7 +324,7 @@
 &trans         &trans         &trans         &trans         &trans         &kp GRAVE                 &trans  &trans                                                 &kp LC(W)
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_horizontal>;
         };
 
         MOUSE {
