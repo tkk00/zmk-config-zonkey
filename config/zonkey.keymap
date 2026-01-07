@@ -291,7 +291,7 @@
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT   &kp LANGUAGE_2  &kp SPACE  &kp LANGUAGE_1                       &kp LEFT_WIN        &mt RALT TAB                                                              &kp JP_PIPE
             >;
 
-            sensor-bindings = <scroll_horizontal>;
+            sensor-bindings = <&scroll_horizontal>;
         };
 
         layer_3 {
