@@ -247,6 +247,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
 
@@ -254,6 +255,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+
             tap-ms = <20>;
         };
     };
@@ -296,10 +298,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans            &trans                                      &trans         &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT
-&trans  &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &mkp MB1        &mkp MB3        &mkp MB2
-&trans  &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &mkp MB1        &mkp MB3        &mkp MB2
-&trans  &trans  &trans  &lt 7 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                                   &trans
+&trans  &trans  &trans  &trans            &trans                                      &trans         &msc SCRL_UP  &msc SCRL_DOWN  &kp LS(LC(RIGHT))  &kp LS(LC(END))
+&trans  &trans  &trans  &trans            &trans       &kp C_MUTE            &trans   &trans         &trans        &mkp MB1        &mkp MB3           &mkp MB2
+&trans  &trans  &trans  &trans            &trans       &kp DELETE            &kp DEL  &trans         &trans        &mkp MB1        &mkp MB3           &mkp MB2
+&trans  &trans  &trans  &lt 7 INT_HENKAN  &lt 4 SPACE  &lt 5 INT_MUHENKAN             &kp BACKSPACE  &kp KP_ENTER                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(C_VOLUME_DOWN) LC(C_VOLUME_UP)>;
