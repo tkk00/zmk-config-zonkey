@@ -5,7 +5,7 @@
 
 /* スクロール値の再定義警告を回避 */
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 &default_transform {
     col-offset = <6>;
@@ -43,7 +43,7 @@
         scroller {
             layers = <5>;
             input-processors =
-                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_scroll_scaler 1 300>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -105,14 +105,9 @@
         spi-max-frequency = <2000000>;
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* センサーのX軸データをシステムのY軸(上下)として報告 */
         zephyr,axis-x = <INPUT_REL_Y>;
-        /* センサーのY軸データをシステムのX軸(左右)として報告 */
         zephyr,axis-y = <INPUT_REL_X>;
-
-        /* 必要に応じて反転を調整 */
-        invert-x; // 左右が逆ならこれを残す（または消す）
-        // invert-y; // 上下が逆ならこれを追加する
+        invert-x; 
         
         res-cpi = <800>;
     };
