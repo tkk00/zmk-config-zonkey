@@ -5,7 +5,7 @@
 
 /* スクロール値の再定義警告を回避 */
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1
 
 &default_transform {
     col-offset = <6>;
