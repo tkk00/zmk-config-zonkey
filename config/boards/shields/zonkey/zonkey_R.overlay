@@ -43,8 +43,7 @@
         scroller {
             layers = <5>;
             input-processors =
-                <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-                <&zip_scroll_scaler 1 100>,
+                <&zip_scroll_scaler 1 300>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
@@ -66,7 +65,6 @@
         temp_layer_handler {
             layers = <0 1 2 3 4 6 7>;
             input-processors =
-                <&zip_xy_transform(INPUT_TRANSFORM_XY_SWAP)>,
                 <&zip_temp_layer 6 10000>;
         };
     };
@@ -106,10 +104,15 @@
         spi-max-frequency = <2000000>;
         motion-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        zephyr,axis-x = <INPUT_REL_X>;
-        zephyr,axis-y = <INPUT_REL_Y>;
+        /* センサーのX軸データをシステムのY軸(上下)として報告 */
+        zephyr,axis-x = <INPUT_REL_Y>;
+        /* センサーのY軸データをシステムのX軸(左右)として報告 */
+        zephyr,axis-y = <INPUT_REL_X>;
 
-        invert-y;
+        /* 必要に応じて反転を調整 */
+        invert-x; // 左右が逆ならこれを残す（または消す）
+        // invert-y; // 上下が逆ならこれを追加する
+        
         res-cpi = <600>;
     };
 };
